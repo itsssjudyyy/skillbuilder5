@@ -18,7 +18,14 @@ public class SkillBuilder5
     public static double[] prefixAverage(double[] data)
     {
         //TODO: replace this line with your code.
-        return null;
+        double sum = 0;
+        double[]newData = new double[data.length];
+        for(int i = 0; i < data.length; i++){
+            sum += data[i];
+            double addToArray = sum / (i + 1);
+            newData[i] = addToArray;
+        }
+        return newData;
     }
 
     /**
@@ -32,7 +39,12 @@ public class SkillBuilder5
     public static int  indexOf(int searchValue, int[] anArray)
     {
         //TODO: replace this line with your code.
-        return 0;
+        for (int f = 0; f < anArray.length; f++){
+            if(anArray[f] == searchValue){
+                return f;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -45,8 +57,12 @@ public class SkillBuilder5
      */
     public static int  indexOf(String s, String[] anArray)
     {
-        //TODO: replace this line with your code.
-        return 0;
+        for (int f = 0; f < anArray.length; f++){
+            if(anArray[f].equals(s)){
+                return f;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -56,10 +72,23 @@ public class SkillBuilder5
      * @param anArray array in which to search and remove s
      * @return An array with all occurrences of s removed.
      */
-    public static String[] remove(String s, String[] anArray)
-    {
+    public static String[] remove(String s, String[] anArray) {
         // add your code here
-        return null;
+        int counter = 0;
+        for (String Judy : anArray) {
+            if (!Judy.equals(s)) {
+                counter++;
+            }
+        }
+        String[] JudyMacs = new String[counter];
+        int tracker = 0;
+        for (String FlyHigh : anArray) {
+            if (!FlyHigh.equals(s)) {
+                JudyMacs[tracker] = FlyHigh;
+                tracker++;
+            }
+        }
+        return JudyMacs;
     }
 
     /**
@@ -69,5 +98,13 @@ public class SkillBuilder5
     public static void reverse(int[] anArray)
     {
         // add your code here
+        int[] Bug = new int[anArray.length];
+        for(int i = 0; i < anArray.length; i++)
+            Bug[i] = anArray[i];
+        int tracker = 0;
+        for(int f = Bug.length-1; f >= 0; f--) {
+            anArray[tracker] = Bug[f];
+            tracker++;
+        }
     }
 }
